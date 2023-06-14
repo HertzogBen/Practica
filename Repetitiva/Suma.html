@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de suma acumulativa</title>
+  <script>
+    function calcularSuma() {
+      var total = 0;
+      var num;
+      do {
+        num = parseInt(prompt("Ingresa un número (0 para terminar):"));
+        if (!isNaN(num)) {
+          total += num;
+        }
+      } while (num !== 0);
+      document.getElementById('resultado').innerHTML = "La suma acumulativa es: " + total;
+    }
+  </script>
+</head>
+<body>
+  <h2>Calculadora de suma acumulativa</h2>
+  <input type="button" value="Calcular" onclick="calcularSuma()">
+  <p id="resultado"></p>
+</body>
+</html>

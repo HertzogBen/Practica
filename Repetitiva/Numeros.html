@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generador de números pares</title>
+  <script>
+    function generarPares() {
+      var limite = parseInt(document.getElementById('limite').value);
+      var pares = "";
+      for (var i = 2; i <= limite; i += 2) {
+        pares += i + " ";
+      }
+      document.getElementById('resultado').innerHTML = "Números pares hasta el " + limite + ": " + pares;
+    }
+  </script>
+</head>
+<body>
+  <h2>Generador de números pares</h2>
+  <form>
+    <label for="limite">Límite:</label>
+    <input type="number" id="limite"><br><br>
+    <input type="button" value="Generar" onclick="generarPares()">
+  </form>
+  <p id="resultado"></p>
+</body>
+</html>

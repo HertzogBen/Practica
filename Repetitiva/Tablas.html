@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generador de tablas de multiplicar</title>
+  <script>
+    function generarTabla() {
+      var num = parseInt(document.getElementById('numero').value);
+      var tabla = "";
+      for (var i = 1; i <= 10; i++) {
+        tabla += num + " x " + i + " = " + (num * i) + "<br>";
+      }
+      document.getElementById('resultado').innerHTML = tabla;
+    }
+  </script>
+</head>
+<body>
+  <h2>Generador de tablas de multiplicar</h2>
+  <form>
+    <label for="numero">Número:</label>
+    <input type="number" id="numero"><br><br>
+    <input type="button" value="Generar" onclick="generarTabla()">
+  </form>
+  <p id="resultado"></p>
+</body>
+</html>

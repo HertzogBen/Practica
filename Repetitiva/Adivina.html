@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validador de contraseña</title>
+  <script>
+    function validarContraseña() {
+      var contraseña = document.getElementById('contraseña').value;
+      var intentos = 3;
+      var contraseñaCorrecta = "abc123";
+      
+      while (contraseña !== contraseñaCorrecta && intentos > 0) {
+        intentos--;
+        contraseña = prompt("Contraseña incorrecta. Intentos restantes: " + intentos);
+      }
+      
+      if (contraseña === contraseñaCorrecta) {
+        document.getElementById('resultado').innerHTML = "Contraseña correcta. Acceso concedido.";
+      } else {
+        document.getElementById('resultado').innerHTML = "Contraseña incorrecta. Acceso denegado.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Validador de contraseña</h2>
+  <form>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña"><br><br>
+    <input type="button" value="Validar" onclick="validarContraseña()">
+  </form>
+  <p id="resultado"></p>
+</body>
+</html>
